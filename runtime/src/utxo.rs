@@ -47,6 +47,8 @@ decl_storage! {
         .map(|u| (BlakeTwo256::hash_of(&u), u))
         .collect::<Vec<_>>()
       }): map hasher(identity) H256 => Option<TransactionOutput>;
+
+      pub RewardTotal get(reward_total): Value;
     }
 
     add_extra_genesis {
